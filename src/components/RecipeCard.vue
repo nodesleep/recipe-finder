@@ -1,10 +1,14 @@
 <script setup lang="ts">
-import { computed, defineProps } from "vue";
+import { defineProps, computed } from "vue";
 import { HandThumbUpIcon } from "@heroicons/vue/24/solid";
 
 const props = defineProps({
   id: Number,
-  title: String,
+  title: {
+    type: String,
+    required: true,
+    default: "Untitled Recipe",
+  },
   image: String,
   likes: Number,
 });

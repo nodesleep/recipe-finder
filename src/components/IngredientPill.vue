@@ -6,10 +6,13 @@ import { useFoodStore } from "../stores/foodStore.ts";
 const store = useFoodStore();
 
 const props = defineProps({
-  name: String,
-  required: true,
+  name: {
+    type: String,
+    required: true,
+  },
 });
 </script>
+
 <template>
   <div
     class="flex items-center bg-neutral-50 rounded-full px-3 py-1 text-neutral-800 border border-neutral-400 text-sm"
