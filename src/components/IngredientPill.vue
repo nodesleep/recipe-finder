@@ -7,6 +7,7 @@ const store = useFoodStore();
 
 const props = defineProps({
   name: String,
+  required: true,
 });
 </script>
 <template>

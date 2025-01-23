@@ -35,7 +35,7 @@ const truncateTitle = computed(() => {
 
       <!-- Title section -->
       <div class="flex items-center p-2">
-        <h1 class="font-medium">{{ truncateTitle }}</h1>
+        <h1 class="font-medium">{{ truncateTitle || "Untitled Recipe" }}</h1>
         <div class="flex items-center gap-2 text-neutral-500 ml-auto">
           <HandThumbUpIcon class="h-6 w-6" /> {{ props.likes }}
         </div>
