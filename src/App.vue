@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { ref } from "vue";
 import { useFoodStore } from "./stores/foodStore.ts";
 import { ArrowPathIcon } from "@heroicons/vue/24/solid";
 import RecipeCard from "./components/RecipeCard.vue";
-import ingredientPill from "./components/IngredientPill.vue";
+import IngredientPill from "./components/IngredientPill.vue";
 
 const store = useFoodStore();
 
@@ -41,7 +41,7 @@ const addIngredient = (ingredient: string) => {
       <div class="flex flex-col pt-3">
         <div class="grid grid-cols-10 gap-3">
           <div v-for="ingredient in store.foodAvailable">
-            <ingredientPill :name="ingredient" />
+            <IngredientPill :name="ingredient || ''" />
           </div>
         </div>
         <div class="mt-3">
@@ -72,7 +72,7 @@ const addIngredient = (ingredient: string) => {
       </div>
 
       <!-- Recipes section -->
-      <div v-if="store.recipes.length > 0">
+      <div v-if="store.recipes.length > 0 && !store.isLoading">
         <h1 class="text-2xl font-semibold uppercase mt-12">Recipes</h1>
         <div class="grid grid-cols-4 gap-2 mt-5">
           <div v-for="recipe in store.recipes" :key="recipe.id">
