@@ -39,6 +39,7 @@ export const useFoodStore = defineStore("food", {
     },
 
     addIngredient(ingredient: string) {
+      if (ingredient === "") return;
       this.foodAvailable.push(ingredient);
       this.formatListParams();
     },

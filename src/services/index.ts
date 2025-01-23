@@ -9,7 +9,7 @@ export const getRecipesByIngredients = async (ingredients: string[]) => {
     const response = await axios.get(API_URL, {
       params: {
         ingredients: ingredients.join(","),
-        number: 12,
+        number: 20,
         apiKey: API_KEY,
       },
     });
