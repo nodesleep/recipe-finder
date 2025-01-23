@@ -17,7 +17,7 @@ export const useFoodStore = defineStore("food", {
 
         const res: Recipe[] = await getRecipesByIngredients(this.foodAvailable);
 
-        this.recipes = res.sort((a: Recipe, b: Recipe) => b.likes - a.likes);
+        this.recipes = res;
 
         this.isLoading = false;
       } catch (error) {

@@ -39,10 +39,11 @@ const addIngredient = (ingredient: string) => {
       </div>
 
       <div class="flex flex-col pt-3">
-        <div class="grid grid-cols-10 gap-3">
-          <div v-for="ingredient in store.foodAvailable">
-            <IngredientPill :name="ingredient || ''" />
-          </div>
+        <div class="flex flex-wrap items-center gap-2 mt-3">
+          <IngredientPill
+            :name="ingredient || ''"
+            v-for="ingredient in store.foodAvailable"
+          />
         </div>
         <div class="mt-3">
           <button

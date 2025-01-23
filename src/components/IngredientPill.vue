@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
 import { XMarkIcon } from "@heroicons/vue/24/solid";
 import { useFoodStore } from "../stores/foodStore.ts";
 
